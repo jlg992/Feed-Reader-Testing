@@ -74,10 +74,6 @@ $(function() {
           * clicked and does it hide when clicked again.
           */
         it('toggles visibility', function() {
-            var menu = document.querySelector('.menu-icon-link');
-            var body = document.body;
-            var bodyClass = body.className;
-
             menu.click();
             expect(body.className).not.toBe('menu-hidden');
             menu.click();

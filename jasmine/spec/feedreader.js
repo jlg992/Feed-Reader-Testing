@@ -60,6 +60,11 @@ $(function() {
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
+        it('starts hidden', function() {
+            var body = document.body;
+            var bodyClass = body.className;
+            expect(bodyClass).toBe('menu-hidden');
+        });
 
          /* TODO: Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
@@ -67,7 +72,7 @@ $(function() {
           * clicked and does it hide when clicked again.
           */
     });
-    
+
     /* TODO: Write a new test suite named "Initial Entries" */
 
         /* TODO: Write a test that ensures when the loadFeed

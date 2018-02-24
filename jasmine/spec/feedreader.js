@@ -54,10 +54,14 @@ $(function() {
 
     /* TODO: Write a new test suite named "The menu" */
     describe('The menu', function() {
+      var menu,
+          body,
+          bodyClass;
 
-        var menu = document.querySelector(".menu-icon-link");
-        var body = document.body;
-        var bodyClass = body.className;
+      beforeEach(function() {
+        body = document.body;
+        bodyClass = body.className;
+      });
 
         /* TODO: Write a test that ensures the menu element is
          * hidden by default. You'll have to analyze the HTML and
@@ -74,6 +78,7 @@ $(function() {
           * clicked and does it hide when clicked again.
           */
         it('toggles visibility', function() {
+            menu = document.querySelector(".menu-icon-link");
             menu.click();
             expect(body.className).not.toBe('menu-hidden');
             menu.click();
@@ -90,6 +95,19 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
 
+        beforeEach(function(done) {
+              loadFeed(0, function() {
+                  done();
+              });
+        });
+
+        it('should have at least one entry', function(done) {
+            var container = document.querySelector('.feed');
+            expect(container.firstElementChild).toBeDefined();
+            done();
+        });
+    });
+
     /* TODO: Write a new test suite named "New Feed Selection" */
 
         /* TODO: Write a test that ensures when a new feed is loaded
@@ -97,5 +115,4 @@ $(function() {
          * Remember, loadFeed() is asynchronous.
          */
 
-    });
 }());

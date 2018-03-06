@@ -128,7 +128,7 @@ $(function() {
                     feed2 = $('.feed').html();
                     loadFeed(0, function() {
                         done();
-                    })
+                    });
                 });
             });
         });

@@ -134,8 +134,6 @@ $(function() {
         });
 
         it('causes a content change', function(done) {
-            console.log(feed1);
-            console.log(feed2);
             expect(feed1).not.toEqual(feed2);
             done();
         });

@@ -80,9 +80,9 @@ $(function() {
         it('toggles visibility', function() {
             menu = document.querySelector(".menu-icon-link");
             menu.click();
-            expect(body.className).not.toBe('menu-hidden');
+            expect($(body).hasClass('menu-hidden')).toBe(false);
             menu.click();
-            expect(bodyClass).toBe('menu-hidden');
+            expect($(body).hasClass('menu-hidden')).toBe(true);
         });
     });
 

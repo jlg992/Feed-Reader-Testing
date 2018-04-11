@@ -69,7 +69,7 @@ $(function() {
          * hiding/showing of the menu element.
          */
         it('starts hidden', function() {
-            expect(bodyClass).toBe('menu-hidden');
+            expect($(body).hasClass('menu-hidden')).toBe(true);
         });
 
          /* TODO: Write a test that ensures the menu changes

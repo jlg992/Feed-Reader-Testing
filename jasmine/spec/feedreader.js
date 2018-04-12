@@ -91,12 +91,15 @@ describe('New Feed Selection', function() {
             feed1 = $('.feed').html();
             loadFeed(1, function() {
                 feed2 = $('.feed').html();
-                loadFeed(0, function() {
-                    done();
-                });
+                done()
             });
         });
     });
+
+    afterEach(function() {
+      loadFeed(0);
+    });
+
 
     it('causes a content change', function(done) {
         expect(feed1).not.toEqual(feed2);

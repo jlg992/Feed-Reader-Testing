@@ -94,9 +94,7 @@ $(function() {
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
-        var container,
-            body1,
-            body2;
+        var entriesLength;
 
         beforeEach(function(done) {
               loadFeed(0, function() {
@@ -105,8 +103,9 @@ $(function() {
         });
 
         it('should have at least one entry', function(done) {
-            container = document.querySelector('.feed');
-            expect(container.firstElementChild).toBeDefined();
+            entriesLength = $('.feed .entry').length;
+            console.log(entriesLength)
+            expect(entriesLength).toBeGreaterThan(0);
             done();
         });
     });
